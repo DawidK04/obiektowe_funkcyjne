@@ -1,10 +1,10 @@
-package dziedziczenie;
-
-public class Student extends Pracownik{
-    private String spec
-            public Student(int n, String s) {
-        super(n);
+public class Student extends Osoba {
+    private String spec;
+    public Student (String n, String s) {
+        super (n);
         spec = s;
-            }
-            
+    }
+    public String getInfo() {
+        return "Student specjalizacji: " + spec;
+    }
 }

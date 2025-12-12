@@ -1,0 +1,19 @@
+foldr1(\x y->(x+y)/2)[(-8),9,10,6,2]
+
+---
+
+ghci> :{
+ghci| czyPrawda x = case x `mod` 2 of
+ghci|  0 -> "Prawda"
+ghci|  1 -> "False"
+ghci| :}
+
+---
+
+ghci> :{
+ghci| bmi w h
+ghci|  |w/h^2 <= 18.5 = "KFC&McDonalds"
+ghci|  |w/h^2 <= 25.5 = "K.Figura"
+ghci|  |w/h^2 <= 30.0 = "STOP"
+ghci|  |otherwise = "Overkill"
+ghci| :}

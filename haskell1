@@ -12,8 +12,21 @@ foldr1(\x y->(x+y)/2)[(-8),9,10,6,2]
 
 :{
 bmi w h
- |w/h^2 <= 18.5 = "KFC&McDonalds"
- |w/h^2 <= 25.5 = "K.Figura"
- |w/h^2 <= 30.0 = "STOP"
+ |wh2 <= 18.5 = "KFC&McDonalds"
+ |wh2 <= 25.5 = "K.Figura"
+ |wh2 <= 30.0 = "STOP"
  |otherwise = "Overkill"
+where wh2 = w/h^2
+:}
+
+---
+
+:{
+bmi w h
+ |wh2 <= 18.5 = "chudy"
+ |wh2 <= 25.5 = "normalny"
+ |wh2 <= 30.0 = "gruby"
+ |otherwise = "Overkill"
+where wh2 = w/h^2
+(chudy,normalny,gruby) = (18.5,25.5,30.0)
 :}

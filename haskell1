@@ -16,17 +16,31 @@ bmi w h
  |wh2 <= 25.5 = "K.Figura"
  |wh2 <= 30.0 = "STOP"
  |otherwise = "Overkill"
-where wh2 = w/h^2
+ where
+  wh2 = w/h^2
 :}
 
 ---
 
 :{
 bmi w h
- |wh2 <= 18.5 = "chudy"
- |wh2 <= 25.5 = "normalny"
- |wh2 <= 30.0 = "gruby"
- |otherwise = "Overkill"
-where wh2 = w/h^2
-(chudy,normalny,gruby) = (18.5,25.5,30.0)
+  | wh2 <= chudy = "chudy"
+  | wh2 <= normalny = "normalny"
+  | wh2 <= gruby = "gruby"
+  | otherwise = "Overkill"
+  where 
+    wh2 = w / (h^2)
+    (chudy, normalny, gruby) = (18.5, 25.5, 30.0)
 :}
+
+---
+
+bmi w h =
+    let bmi = w/h^2
+    in if bmi <= 18.5
+        then "KFC&McDonalds"
+        else if bmi <= 25.5
+            then "K.Figura"
+            else if bmi <= 30.0
+                then "STOP"
+                else "Overkill"
